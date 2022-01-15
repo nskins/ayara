@@ -1,5 +1,3 @@
-require_relative '../../lib/Item/item.rb'
-
 class Bucket < Item
   def initialize
     super(name: "Bucket", price: 1, consumable: false)

@@ -1,9 +1,10 @@
-require_relative "../lib/driver.rb"
-require_relative "../lib/Battle/BattleCommand/use.rb"
-require_relative "Battle/BattleCommand/Attack/punch.rb"
-require_relative "../lib/Entity/player.rb"
-require_relative "Map/Map/ayara.rb"
-require_relative "Story/intro.rb"
+require 'goby'
+
+include Goby
+
+require_relative "battle/battle_command/attack/punch.rb"
+require_relative "map/map/ayara.rb"
+require_relative "story/intro.rb"
 
 print_intro
 system("clear")

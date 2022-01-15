@@ -1,5 +1,3 @@
-require_relative '../../../lib/Item/Food/food.rb'
-
 class Celery < Food
   def initialize
     super(name: "Celery", price: 2, recovers: 1)

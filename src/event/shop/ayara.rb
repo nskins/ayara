@@ -1,10 +1,9 @@
-require_relative '../../../lib/Event/Shop/shop.rb'
-require_relative '../../Item/bait.rb'
-require_relative '../../Item/fishing_pole.rb'
-require_relative '../../Item/Food/egg.rb'
-require_relative '../../Item/Food/fish.rb'
-require_relative '../../Item/Food/fruits.rb'
-require_relative '../../Item/Food/veggies.rb'
+require_relative '../../item/bait.rb'
+require_relative '../../item/fishing_pole.rb'
+require_relative '../../item/food/egg.rb'
+require_relative '../../item/food/fish.rb'
+require_relative '../../item/food/fruits.rb'
+require_relative '../../item/food/veggies.rb'
 
 class FarmersMarket1 < Shop
   def initialize

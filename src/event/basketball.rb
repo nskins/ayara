@@ -1,25 +1,25 @@
-require_relative '../Item/basketball.rb'
+require_relative '../item/basketball.rb'
 
 module BBall
-  
+
   # Returns true when the ball lands within the net.
   def shoot
     done = false
     success = false
-    
+
     # Current position of the ball.
     current_position = 0
-    
+
     # The character at the ball's current position.
     previous = "·"
-    
+
     board = build_board
     mutex = Mutex.new
-    
+
     print "Press 'enter' to jump..."
     input = gets
     print "\n"
-    
+
     input_thread = Thread.start do
       input = gets
       mutex.lock
@@ -34,10 +34,10 @@ module BBall
       done = true
       mutex.unlock
     end
-    
-    output_thread = Thread.start do  
+
+    output_thread = Thread.start do
       while ((current_position < (board.size - 1)) && (!done))
-        
+
         mutex.lock
         if (current_position < (board.size - 1))
           # Move the ball to the next position.
@@ -47,21 +47,21 @@ module BBall
           previous = temp
         end
         current_position += 1
-      
+
         print_array(board)
         mutex.unlock
         sleep(0.02)
       end
     end
-    
+
     input_thread.join
     output_thread.join
-    
+
     return success
   end
-  
+
   private
-  
+
     def build_board
       board = ["○"]
 
@@ -79,32 +79,32 @@ module BBall
       4.times do
         board.push("·")
       end
-    
+
       return board
     end
-    
+
     def print_array(board)
       print "\r"
       board.each do |c|
         print c
       end
     end
-  
+
 end
 
 class BasketballNet < Event
   def initialize
     super(command: "shoot")
   end
-  
+
   def run(player)
     if (!player.has_item(Basketball.new))
       print "You need a Basketball to shoot here!\n\n"
       return
     end
-    
+
     success = shoot
-    print "\n" 
+    print "\n"
     if success
       puts "Great shot!"
       random = Random.rand(3)
@@ -117,6 +117,6 @@ class BasketballNet < Event
     end
     print "Miss!\n\n" unless success
   end
-  
+
   include(BBall)
 end

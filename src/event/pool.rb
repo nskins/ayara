@@ -1,6 +1,5 @@
-require_relative '../../lib/Event/event.rb'
-require_relative '../Item/bait.rb'
-require_relative '../Item/fishing_pole.rb'
+require_relative '../item/bait.rb'
+require_relative '../item/fishing_pole.rb'
 
 class Pool < Event
   def initialize(mode: 0, visible: true, fish: Baitable.new)
@@ -8,7 +7,7 @@ class Pool < Event
     @command = "fish"
     @fish = fish
   end
-  
+
   def run(player)
     if player.has_item(FishingPole.new).nil?
       print "In order to fish, you need a Fishing Pole.\n\n"
@@ -41,11 +40,11 @@ class Pool < Event
       end
     end
   end
-  
+
   attr_accessor :fish
-  
+
   private
-    
+
     def find_baits(player)
       baits = []
       player.inventory.each do |item|
@@ -55,7 +54,7 @@ class Pool < Event
       end
       return baits
     end
-    
+
 end
 
 # Subclasses

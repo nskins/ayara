@@ -1,5 +1,3 @@
-require_relative '../../../lib/Map/Tile/tile.rb'
-
 class Grass < Tile
   def initialize
     super(description: "You are standing on some grass.")
