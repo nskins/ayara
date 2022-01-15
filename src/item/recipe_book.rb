@@ -52,7 +52,7 @@ class Recipe
   # String
   attr_accessor :name
 
-  # Array<Couple(Item, Integer)>
+  # Array<C(Item, Integer)>
   attr_accessor :ingredients
 
   # Food

@@ -9,7 +9,7 @@ require_relative '../../event/shop/ayara.rb'
 
 class Ayara < Map
   def initialize
-    super(name: "Ayara", regen_location: Couple.new(11,4))
+    super(name: "Ayara")
 
     grass = Grass.new
     stone = Stone.new

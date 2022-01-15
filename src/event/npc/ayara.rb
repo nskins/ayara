@@ -136,9 +136,9 @@ end
 class John < NPC
   def initialize
     super(name: "John")
-    @pairs = [Couple.new(BoiledEgg.new, 8),
-              Couple.new(Bluegill.new, 6),
-              Couple.new(ScrambledEggs.new, 50)]
+    @pairs = [C[BoiledEgg.new, 8],
+              C[Bluegill.new, 6],
+              C[ScrambledEggs.new, 50]]
     @current_index = nil
   end
 
@@ -174,7 +174,7 @@ class John < NPC
     end
   end
 
-  # Array<Couple(Food, Integer)>
+  # Array<C<Food, Integer)>
   # Type of Food the NPC wants and the reward given.
   attr_accessor :pairs
   # Integer

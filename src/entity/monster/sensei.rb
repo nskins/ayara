@@ -8,8 +8,8 @@ class Sensei < Monster
     super(name: "Sensei", max_hp: 20, attack: 5, agility: 2,
           battle_commands: [FlyingKick.new, Punch.new],
           message: "\"Show me your abilities.\"",
-          treasures: [Couple.new(KarateBottom.new, 1),
-                     Couple.new(KarateTop.new, 1)])
+          treasures: [C[KarateBottom.new, 1],
+                     C[KarateTop.new, 1]])
   end
 
   def choose_attack

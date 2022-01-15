@@ -29,7 +29,7 @@ class Stove < Event
       end
 
       # Construct a recipe.
-      recipe = Recipe.new(ingredients: [Couple.new(player.inventory[item_index].first, 1)],
+      recipe = Recipe.new(ingredients: [C[player.inventory[item_index].first, 1]],
                           product: player.inventory[item_index].first.cooked)
     end
 

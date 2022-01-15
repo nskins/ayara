@@ -96,9 +96,9 @@ class SeliaHouse < House
 
         book = RecipeBook.new
         s_eggs = Recipe.new(name: "Scrambled Eggs",
-                            ingredients: [Couple.new(Egg.new, 2),
-                                          Couple.new(Onion.new, 1),
-                                          Couple.new(Pepper.new, 1)],
+                            ingredients: [C[Egg.new, 2],
+                                          C[Onion.new, 1],
+                                          C[Pepper.new, 1]],
                             product: ScrambledEggs.new)
         book.add_recipe(s_eggs)
         player.add_item(book)
