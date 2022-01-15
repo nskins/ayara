@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    goby (0.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  goby (~> 0.2.0)
+
+BUNDLED WITH
+   2.1.4
