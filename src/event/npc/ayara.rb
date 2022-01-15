@@ -53,10 +53,10 @@ class Andre < NPC
     # Final output and movement of gold.
     if (random < shots_made)
       print "You win #{amount} gold!\n\n"
-      player.gold += amount
+      player.add_gold(amount)
     elsif (random > shots_made)
       print "You lose #{amount} gold...\n\n"
-      player.gold -= amount
+      player.remove_gold(amount)
     else
       print "It's a tie!\n\n"
     end
@@ -110,9 +110,9 @@ class Bella < NPC
 
         # Remove the event from the map.
         @visible = false
-        y = player.location.first
-        x = player.location.second
-        player.map.tiles[y][x].description = "You are standing on some grass."
+        y = player.location.coords.first
+        x = player.location.coords.second
+        player.location.map.tiles[y][x].description = "You are standing on some grass."
       else
         type("#{@name}: Oooh..\n")
         type("*She rolls over in extreme pain*\n\n")

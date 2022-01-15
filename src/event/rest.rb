@@ -7,6 +7,6 @@ class Rest < Event
     puts "#{player.name} takes a nap.."
     sleep(1)
     print "..and fully recovers!\n\n"
-    player.hp = player.max_hp
+    player.set_stats(hp: player.stats[:max_hp])
   end
 end
