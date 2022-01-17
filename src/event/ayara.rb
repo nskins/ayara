@@ -15,11 +15,11 @@ class Dojo < Event
   def run(player)
     print "#{player.name} enters the Dojo...\n\n"
     type("#{@name}: Ah, #{player.name}, so good to see you.\n")
-    type("Would you like to train today (y/n)?: ")
+    type("Would you like to train today?: ")
     input = gets.chomp
     print "\n"
 
-    if (input == 'y')
+    if (input.is_positive?)
       type("#{@name}: Very well...")
       sleep(1)
       player.battle(Sensei.new)
@@ -79,11 +79,11 @@ class SeliaHouse < House
       type("of all time.\n\n")
     else
       type("#{@name}: Are you ready to take your cooking\n")
-      type("skills to the next level (y/n)?: ")
+      type("skills to the next level?: ")
       input = gets.chomp
       print "\n"
 
-      if (input == 'y')
+      if (input.is_positive?)
         type("#{@name}: Today, we will learn about recipes!\n")
         type("Each recipe requires specific ingredients.\n")
         type("Once you have obtained the appropriate ingredients,\n")
@@ -143,11 +143,11 @@ class Well < Event
 
   def run(player)
     if player.has_item(Bucket.new)
-      print "Will you fill the Bucket (y/n)?: "
+      print "Will you fill the Bucket?: "
       input = gets.chomp
       print "\n"
 
-      if (input == 'y')
+      if (input.is_positive?)
         puts "You attach the Bucket to the rope and feed it"
         puts "into the well. You pull the Bucket back up and"
         print "find that it's now filled with water.\n\n"
