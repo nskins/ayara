@@ -162,7 +162,7 @@ class John < NPC
         if (input == 'y')
           type("#{@name}: Thank you! Thank you! Here, have this.\n\n")
           print "Obtained #{@pairs[@current_index].second} gold!\n\n"
-          player.gold += @pairs[@current_index].second
+          player.add_gold(@pairs[@current_index].second)
           player.remove_item(@pairs[@current_index].first)
           @mode = 0
         else

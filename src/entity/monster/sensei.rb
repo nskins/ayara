@@ -5,9 +5,8 @@ require_relative '../../item/equippable/torso/karate_top.rb'
 
 class Sensei < Monster
   def initialize
-    super(name: "Sensei", max_hp: 20, attack: 5, agility: 2,
+    super(name: "Sensei", stats: { max_hp: 20, attack: 5, agility: 2 },
           battle_commands: [FlyingKick.new, Punch.new],
-          message: "\"Show me your abilities.\"",
           treasures: [C[KarateBottom.new, 1],
                      C[KarateTop.new, 1]])
   end
